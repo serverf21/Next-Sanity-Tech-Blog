@@ -10,6 +10,7 @@ import SectionSeparator from 'components/SectionSeparator'
 import * as demo from 'lib/demo.data'
 import type { Post, Settings } from 'lib/sanity.queries'
 import { notFound } from 'next/navigation'
+import { BsThreeDots } from 'react-icons/bs'
 
 export interface PostPageProps {
   preview?: boolean
@@ -38,6 +39,7 @@ export default function PostPage(props: PostPageProps) {
       <Layout preview={preview} loading={loading}>
         <Container>
           <BlogHeader title={title} level={2} />
+          <SectionSeparator />
           {preview && !post ? (
             <PostTitle>Loading…</PostTitle>
           ) : (
@@ -50,6 +52,22 @@ export default function PostPage(props: PostPageProps) {
                   author={post.author}
                 />
                 <PostBody content={post.content} />
+                <div className='flex justify-center items-center'> 
+                  <div className="mt-3">
+                    <div className="flex items-center flex-col">
+                      <p className="text-5xl pb-2">
+                        <BsThreeDots />
+                      </p>
+                      <p className="text-2xl pb-2">Thanks for reading!</p>
+                      <p className="mx-2 font-semibold text-stone-700">
+                        Sarvagya Saxena
+                      </p>
+                      <p className="text-sm font-medium leading-4 text-stone-500">
+                        Author
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </article>
               <SectionSeparator />
               {morePosts?.length > 0 && <MoreStories posts={morePosts} />}

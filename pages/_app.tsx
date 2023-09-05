@@ -1,7 +1,10 @@
-import 'tailwindcss/tailwind.css'
+import 'tailwindcss/tailwind.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { AppProps } from 'next/app'
+import { ThemeProvider } from 'next-themes'
 import { lazy } from 'react'
+import { ToastContainer } from 'react-toastify';
 
 export interface SharedPageProps {
   draftMode: boolean
@@ -18,11 +21,18 @@ export default function App({
   return (
     <>
       {draftMode ? (
-        <PreviewProvider token={token}>
-          <Component {...pageProps} />
-        </PreviewProvider>
+        
+          <PreviewProvider token={token}>
+            
+              <Component {...pageProps} />
+              <ToastContainer />
+          </PreviewProvider>
+        
       ) : (
-        <Component {...pageProps} />
+        <>
+          <Component {...pageProps} />
+          <ToastContainer />
+        </>
       )}
     </>
   )

@@ -7,6 +7,7 @@ import MoreStories from 'components/MoreStories'
 import IntroTemplate from 'intro-template'
 import * as demo from 'lib/demo.data'
 import type { Post, Settings } from 'lib/sanity.queries'
+import SectionSeparator from './SectionSeparator'
 
 export interface IndexPageProps {
   preview?: boolean
@@ -27,6 +28,7 @@ export default function IndexPage(props: IndexPageProps) {
       <Layout preview={preview} loading={loading}>
         <Container>
           <BlogHeader title={title} description={description} level={1} />
+          <SectionSeparator/>
           {heroPost && (
             <HeroPost
               title={heroPost.title}

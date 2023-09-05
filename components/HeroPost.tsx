@@ -11,6 +11,7 @@ export default function HeroPost(
   >,
 ) {
   const { title, coverImage, date, excerpt, author, slug } = props
+  // mix-blend-exclusion
   return (
     <section>
       <div className="mb-8 md:mb-16">
@@ -28,7 +29,7 @@ export default function HeroPost(
           </div>
         </div>
         <div>
-          {excerpt && <p className="mb-4 text-lg leading-relaxed">{excerpt}</p>}
+          {/* {excerpt && <p className="mb-4 text-lg leading-relaxed">{excerpt}</p>} */}
           {author && (
             <AuthorAvatar name={author.name} picture={author.picture} />
           )}
