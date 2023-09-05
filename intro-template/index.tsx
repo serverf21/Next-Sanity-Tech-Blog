@@ -137,8 +137,8 @@ export default memo(function IntroTemplate() {
         <div>
         Copyright ©2023 Sarvagya Saxena
         </div>
-        <div>
-        <div className="items-center pt-4 space-x-10"> {/* Right Div */}
+        <div className='hidden md:flex md:justify-center'>
+          <div className="flex items-center pt-2"> {/* Right Div */}
             <Link
               href="https://github.com/serverf21"
               className="block md:inline-block px-2 py-2 text-sm md:text-base bg-gray-900
